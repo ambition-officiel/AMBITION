@@ -2,69 +2,56 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>AMBITION — Luxe & Identité</title>
+  <title>AMBITION — Contemporary Luxury Brand</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AMBITION — Marque de luxe contemporaine. Le luxe comme affirmation de l’identité.">
+  <meta name="description" content="AMBITION — Marque de luxe contemporaine. Séries limitées. Vision long terme.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       background: #000;
       color: #fff;
       font-family: 'Inter', sans-serif;
-      line-height: 1.6;
+      line-height: 1.7;
     }
     header {
       height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+      url('https://images.unsplash.com/photo-1520975916090-3105956dac38') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
-                  url('https://images.unsplash.com/photo-1520975916090-3105956dac38') center/cover no-repeat;
+      padding: 20px;
     }
-    header h1 {
+    h1, h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      letter-spacing: 6px;
+      letter-spacing: 3px;
     }
-    header p {
-      max-width: 600px;
-      margin: 20px auto;
-      font-size: 1.1rem;
-      opacity: 0.9;
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
     }
     section {
-      padding: 80px 10%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 90px 20px;
       border-top: 1px solid rgba(255,255,255,0.08);
     }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 40px;
-      margin-top: 40px;
-    }
-    .card {
-      background: rgba(255,255,255,0.03);
-      padding: 30px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    .card h3 {
-      margin-top: 0;
-      font-weight: 500;
+    .subtitle {
+      opacity: 0.85;
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin: auto;
     }
     .cta {
       display: inline-block;
-      margin-top: 30px;
-      padding: 12px 28px;
+      margin-top: 40px;
+      padding: 14px 34px;
       border: 1px solid #fff;
-      text-decoration: none;
       color: #fff;
+      text-decoration: none;
       letter-spacing: 1px;
       transition: 0.3s;
     }
@@ -72,90 +59,167 @@
       background: #fff;
       color: #000;
     }
-    footer {
-      padding: 40px 10%;
-      text-align: center;
-      font-size: 0.9rem;
-      opacity: 0.7;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      margin-top: 50px;
     }
+    .card {
+      background: rgba(255,255,255,0.03);
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      padding: 12px 40px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 10;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    nav a:hover { opacity: 1; }
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+    .lang-switch {
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .en { display: none; }
   </style>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.fr').forEach(e => e.style.display = lang === 'fr' ? 'block' : 'none');
+      document.querySelectorAll('.en').forEach(e => e.style.display = lang === 'en' ? 'block' : 'none');
+    }
+  </script>
 </head>
-<body>
+
+<body onload="switchLang('fr')">
+
+<nav>
+  <div><strong>AMBITION</strong></div>
+  <div>
+    <a href="#brand">La marque</a>
+    <a href="#creations">Créations</a>
+    <a href="#invest">Vision</a>
+    <a href="#contact">Contact</a>
+    <span class="lang-switch" onclick="switchLang('fr')">FR</span> |
+    <span class="lang-switch" onclick="switchLang('en')">EN</span>
+  </div>
+</nav>
 
 <header>
-  <div>
+  <div class="fr">
     <h1>AMBITION</h1>
-    <p>Le luxe n’est pas un statut.  
-       C’est une identité assumée.</p>
-    <a href="#marque" class="cta">Découvrir</a>
+    <p class="subtitle">
+      Marque de luxe contemporaine<br>
+      Séries limitées · Vision long terme
+    </p>
+    <a href="#invest" class="cta">Entrer en discussion</a>
+  </div>
+
+  <div class="en">
+    <h1>AMBITION</h1>
+    <p class="subtitle">
+      Contemporary luxury brand<br>
+      Limited series · Long-term vision
+    </p>
+    <a href="#invest" class="cta">Start a conversation</a>
   </div>
 </header>
 
-<section id="marque">
-  <h2>La Marque</h2>
-  <p>
-    AMBITION est une marque de luxe contemporaine née d’une conviction simple :
-    <strong>ne pas renoncer à ce que l’on est</strong>.
-    Chaque création est une affirmation silencieuse, pensée pour durer,
-    produite en séries limitées ou en pièce unique.
-  </p>
+<section id="brand">
+  <div class="fr">
+    <h2>La Marque</h2>
+    <p>
+      AMBITION est née d’une conviction simple :
+      <strong>renoncer à son identité coûte plus cher que prendre un risque</strong>.
+      La marque développe des pièces rares, pensées pour durer,
+      à la croisée de la mode, de l’objet et de l’art.
+    </p>
+  </div>
+
+  <div class="en">
+    <h2>The Brand</h2>
+    <p>
+      AMBITION is built on a simple belief:
+      <strong>giving up one’s identity costs more than taking a risk</strong>.
+      The brand creates rare pieces designed to last,
+      at the intersection of fashion, objects, and art.
+    </p>
+  </div>
 </section>
 
 <section id="creations">
-  <h2>Les Créations</h2>
+  <h2>Créations</h2>
   <div class="grid">
     <div class="card">
-      <h3>Manteau d’Hiver — AMBITION</h3>
-      <p>
-        Pièce iconique conçue pour les climats exigeants.
-        Design sobre, lignes fortes, présence affirmée.
-      </p>
-      <p><em>Prototype — Série limitée</em></p>
+      <h3>Manteau d’Hiver</h3>
+      <p>Pièce iconique pensée pour les climats exigeants. Présence, sobriété, maîtrise.</p>
     </div>
     <div class="card">
       <h3>Objets Sculpturaux</h3>
-      <p>
-        Créations en résine et matières organiques.
-        À la frontière entre art, design et fonction.
-      </p>
-      <p><em>Pièces uniques</em></p>
+      <p>Créations uniques mêlant résine, matière et fonction.</p>
     </div>
     <div class="card">
-      <h3>Éditions Spéciales</h3>
-      <p>
-        Séries maîtrisées, jamais reproduites à grande échelle.
-        Chaque objet raconte une vision.
-      </p>
-      <p><em>Disponibilité restreinte</em></p>
+      <h3>Éditions Limitées</h3>
+      <p>Séries maîtrisées, jamais industrialisées à grande échelle.</p>
     </div>
   </div>
 </section>
 
-<section id="investisseurs">
-  <h2>Investisseurs</h2>
-  <p>
-    AMBITION entre dans sa phase de structuration.
-    L’objectif est de lever <strong>40 000 $</strong> via deux investisseurs stratégiques.
-  </p>
-  <p>
-    Les fonds permettront :
-    <ul>
-      <li>Le développement des prototypes</li>
-      <li>L’acquisition d’équipements de production</li>
-      <li>Le lancement des premières séries</li>
-    </ul>
-  </p>
-  <a href="#contact" class="cta">Entrer en contact</a>
+<section id="invest">
+  <div class="fr">
+    <h2>Vision & Partenariats</h2>
+    <p>
+      Ambition entre dans une phase de structuration.
+      La marque ouvre des échanges avec des partenaires et investisseurs
+      partageant une vision long terme du luxe :
+      croissance maîtrisée, rareté, cohérence.
+    </p>
+    <p><strong>Fondateur</strong> — Direction créative & stratégique.</p>
+  </div>
+
+  <div class="en">
+    <h2>Vision & Partnerships</h2>
+    <p>
+      Ambition is entering a key structuring phase.
+      The brand is opening discussions with strategic partners and investors
+      aligned with a long-term vision of luxury:
+      controlled growth, rarity, and coherence.
+    </p>
+    <p><strong>Founder</strong> — Creative & strategic direction.</p>
+  </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
   <p>
-    Collaborations, investisseurs, presse.
+    Pour toute collaboration, partenariat ou échange stratégique :
   </p>
-  <p>
-    📩 Email : <strong>contact@ambition.com</strong><br>
-    📍 Canada
+  <p style="font-size:1.1em; font-weight:600;">
+    <a href="mailto:contact@ambition-officiel.com" style="color:white;">
+      contact@ambition-officiel.com
+    </a>
+  </p>
+  <p style="font-style:italic; margin-top:30px;">
+    Ambition privilégie les échanges alignés avec sa vision long terme.
   </p>
 </section>
 
@@ -165,4 +229,4 @@
 
 </body>
 </html>
- 
+Update final Ambition website
